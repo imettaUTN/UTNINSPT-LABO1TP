@@ -599,7 +599,7 @@ SubProceso DibujarEnvido(cartas)
 	cartasEnvido(cartas);
 	
 	para i <- 1 Hasta 2  Hacer
-		Escribir "";
+		Escribir "  ";
 		Escribir  TraducirCarta(cartas(i));
 		Escribir "";
 		DibujarCarta(cartas(i));	
@@ -801,7 +801,9 @@ SubProceso  cartasEnvido(cartas Por Referencia)
 	existe <- Falso;
 	Dimension  cartasOrdenadas[3];
 	Dimension  cartasDesordenadas[3];
-	mayorPalo <-  MayorPaloCartas( carta1, carta2, carta3 )
+	
+	
+	mayorPalo <-  MayorPaloCartas( cartas(1), cartas(2), cartas(3) )
 	
 	
 	para i <- 1 Hasta  3 Hacer
@@ -840,6 +842,7 @@ Fin SubProceso
 
 //ORDENA LAS CARTAS
 SubProceso OrdenarCartas ( cartas Por Referencia , masoOrdenado Por Referencia) 
+	Escribir "cartass ordeno ", cartas(1), cartas(2), cartas(3);
 	Definir  carta1, carta2, carta3,tmp, x,z ,cartasOrdenadas Como Entero;
 	Dimension  cartasOrdenadas[3];
 	carta1 <- cartas[1];
@@ -909,7 +912,6 @@ FinSubProceso
 
 //PUNTAJE ENVIDO
 SubProceso val <- PuntajeEnvido ( carta1, carta2, carta3 )
-	//	Escribir "Carta 1 :",carta1 , " carta 2:" , carta2 , " carta 3:" , carta3;
 	
 	Definir val,v, mayorPalo, cantP1, cantP2, cantP3, cantP4 Como entero;
 	
@@ -920,6 +922,7 @@ SubProceso val <- PuntajeEnvido ( carta1, carta2, carta3 )
 		huboFlor <- Verdadero;
 	SiNo
 		v <- 20;
+		
 		mayorPalo <- MayorPaloCartas ( carta1, carta2, carta3 );
 		
 		//las figuras no se cuentan en el Envido
@@ -948,301 +951,160 @@ FinSubProceso
 SubProceso  Cantar(param, nroJugador)
 	
 	si nroJugador = 1 Entonces
-		si param = 33 Entonces
-			Escribir  "Jugador 1:";
-			
-//			escribir "    _________        _______ _______ ______  _______ _______    __         ";       
-//			escribir "    \__    _/\     /(  ____ (  ___  |  __  \(  ___  |  ____ )  /  \        ";  
-//			escribir "       )  ( | )   ( | (    \/ (   ) | (  \  ) (   ) | (    )|  \/) )    _    ";
-//			escribir "       |  | | |   | | |     | (___) | |   ) | |   | | (____)|    | |   (_)   ";
-//			escribir "       |  | | |   | | | ____|  ___  | |   | | |   | |     __)    | |         ";
-//			escribir "       |  | | |   | | | \_  ) (   ) | |   ) | |   | | (\ (       | |    _    ";
-//			escribir "    |\_)  ) | (___) | (___) | )   ( | (__/  ) (___) | ) \ \__  __) (_  (_)   ";
-//			escribir "    (____/  (_______|_______)/     \(______/(_______)/   \__/  \____/        ";
-//			escribir "                                                                             ";
+		si param >= 33 Entonces
+			escribir "  88888 88   88  dP**b8    db    8888b.   dP*Yb  88**Yb     *d ";
+			escribir "     88 88   88 dP        dPYb   8I  Yb  dP   Yb 88__dP   *d88 ";
+			escribir " o.  88 Y8   8P Yb //88  dP__Yb  8I  dY  Yb   dP 88*Yb      88 ";
+			escribir " *bodP. `YbodP.  YboodP dP****Yb 8888Y*   YbodP  88  Yb     88 ";
+
 			
 		SiNo
-			Escribir  "Jugador 1 canto:";
-//			escribir "  _________        _______ _______ ______  _______ _______    __       _______ _______ _      ________________      ";
-//			escribir "  \__    _/\     /(  ____ (  ___  |  __  \(  ___  |  ____ )  /  \     (  ____ (  ___  | (    /\__   __(  ___  )     ";
-//			escribir "     )  ( | )   ( | (    \/ (   ) | (  \  ) (   ) | (    )|  \/) )    | (    \/ (   ) |  \  ( |  ) (  | (   ) |   _ ";
-//			escribir "     |  | | |   | | |     | (___) | |   ) | |   | | (____)|    | |    | |     | (___) |   \ | |  | |  | |   | |  (_)";
-//			escribir "     |  | | |   | | | ____|  ___  | |   | | |   | |     __)    | |    | |     |  ___  | (\ \) |  | |  | |   | |     ";
-//			escribir "     |  | | |   | | | \_  ) (   ) | |   ) | |   | | (\ (       | |    | |     | (   ) | | \   |  | |  | |   | |   _ ";
-//			escribir "  |\_)  ) | (___) | (___) | )   ( | (__/  ) (___) | ) \ \__  __) (_   | (____/\ )   ( | )  \  |  | |  | (___) |  (_)";
-//			escribir "  (____/  (_______|_______)/     \(______/(_______)/   \__/  \____/   (_______//     \|/    )_)  )_(  (_______)     ";
-//			escribir "                                                                                                                 ";
+			escribir "  88888 88   88  dP**b8    db    8888b.   dP*Yb  88**Yb       .d      dP**b8    db    88b 88 888888  dP*Yb ";
+			escribir "     88 88   88 dP        dPYb    8I  Yb dP   Yb 88__dP     .d88     dP   `*   dPYb   88Yb88   88   dP   Yb ";
+			escribir " o.  88 Y8   8P Yb **88  dP__Yb   8I  dY Yb   dP 88*Yb        88     Yb       dP__Yb  88 Y88   88   Yb   dP ";
+			escribir " *bodPo `YbodPo  YboodP dP****Yb 8888Y*   YbodP  88  Yb       88      YboodP dP****Yb 88  Y8   88    YbodP ";
+
 		FinSi
 		
 	SiNo
-	    si param = 33 Entonces
-			Escribir  "Jugador 2:";
-//			escribir "    _________        _______ _______ ______  _______ _______    _______      ";
-//			escribir "    \__    _/\     /(  ____ (  ___  |  __  \(  ___  |  ____ )  / ___   )     ";
-//			escribir "       )  ( | )   ( | (    \/ (   ) | (  \  ) (   ) | (    )|  \/   )  |   _ ";
-//			escribir "       |  | | |   | | |     | (___) | |   ) | |   | | (____)|      /   )  (_)";
-//			escribir "       |  | | |   | | | ____|  ___  | |   | | |   | |     __)    _/   /      ";
-//			escribir "       |  | | |   | | | \_  ) (   ) | |   ) | |   | | (\ (      /   _/     _ ";
-//			escribir "    |\_)  ) | (___) | (___) | )   ( | (__/  ) (___) | ) \ \__  (   (__/\  (_)";
-//			escribir "    (____/  (_______|_______)/     \(______/(_______)/   \__/  \_______/     ";
-//			escribir "                                                                             ";		
+	    si param >= 33 Entonces
+			escribir "  88888 88   88  dP**b8    db    8888b.   dP*Xb  88**Xb   oP*Xb. ";
+			escribir "     88 88   88 dP        dPXb   8I  Xb  dP   dP 88__dP   .  dPo ";
+			escribir " o*  88 X8   8P Xb --88  dP__Xb  8I  dX  Xb   dP 88*Xb      dPo ";
+			escribir " *bodPo `XbodPo  XboodP dP****Xb 8888X*   XbodP  88  Xb   .d8888 ";
+
+	
 		SiNo
-			Escribir  "Jugador 2 canto:";
-			
-//			escribir "  _________        _______ _______ ______  _______ _______    _______     _______ _______ _      ________________      ";
-//			escribir "  \__    _/\     /(  ____ (  ___  |  __  \(  ___  |  ____ )  / ___   )   (  ____ (  ___  | (    /\__   __(  ___  )     "; 
-//			escribir "     )  ( | )   ( | (    \/ (   ) | (  \  ) (   ) | (    )|  \/   )  |   | (    \/ (   ) |  \  ( |  ) (  | (   ) |   _ ";
-//			escribir "     |  | | |   | | |     | (___) | |   ) | |   | | (____)|      /   )   | |     | (___) |   \ | |  | |  | |   | |  (_)";
-//			escribir "     |  | | |   | | | ____|  ___  | |   | | |   | |     __)    _/   /    | |     |  ___  | (\ \) |  | |  | |   | |     ";
-//			escribir "     |  | | |   | | | \_  ) (   ) | |   ) | |   | | (\ (      /   _/     | |     | (   ) | | \   |  | |  | |   | |   _ ";
-//			escribir "  |\_)  ) | (___) | (___) | )   ( | (__/  ) (___) | ) \ \__  (   (__/\   | (____/\ )   ( | )  \  |  | |  | (___) |  (_)";
-//			escribir "  (____/  (_______|_______)/     \(______/(_______)/   \__/  \_______/   (_______//     \|/    )_)  )_(  (_______)     ";
-//			escribir "                                                                                                                 ";
+			escribir "  88888 88   88  dP**b8    db    8888b.   dP*Yb  88**Yb     oP*Yb.      dP**b8    db    88b 88 888888  dP*Yb ";
+			escribir "     88 88   88 dP        dPYb   8I  Yb  dP   Yb 88__dP     *. dPo     dP   `*   dPYb   88Yb88   88   dP   Yb ";
+			escribir " o.  88 Y8   8P Yb **88  dP__Yb  8I  dY  Yb   dP 88*Yb        dPo      Yb       dP__Yb  88 Y88   88   Yb   dP ";
+			escribir " *bodPo `YbodPo  YboodP dP****Yb 8888Y*   YbodP  88  Yb     .d8888      YboodP dP****Yb 88  Y8   88    YbodP ";
 		FinSi	
 	FinSi
 	
 	segun param Hacer
 		33:			
-			Escribir  "Gano la ronda:";
-//			
-//			escribir "     _______ _______ _       _______    _       _______    _______ _______ _       ______  _______ _ _  ";
-//			escribir "    (  ____ (  ___  | (    /(  ___  )  ( \     (  ___  )  (  ____ |  ___  | (    /(  __  \(  ___  | | ) ";
-//			escribir "    | (    \/ (   ) |  \  ( | (   ) |  | (     | (   ) |  | (    )| (   ) |  \  ( | (  \  ) (   ) | | | ";
-//			escribir "    | |     | (___) |   \ | | |   | |  | |     | (___) |  | (____)| |   | |   \ | | |   ) | (___) | | | ";
-//			escribir "    | | ____|  ___  | (\ \) | |   | |  | |     |  ___  |  |     __) |   | | (\ \) | |   | |  ___  | | | ";
-//			escribir "    | | \_  ) (   ) | | \   | |   | |  | |     | (   ) |  | (\ (  | |   | | | \   | |   ) | (   ) (_|_) ";
-//			escribir "    | (___) | )   ( | )  \  | (___) |  | (____/\ )   ( |  | ) \ \_| (___) | )  \  | (__/  ) )   ( |_ _  ";
-//			escribir "    (_______)/     \|/    )_|_______)  (_______//     \|  |/   \__(_______)/    )_|______/|/     \(_|_) ";
-//			escribir "                                                                                                        ";
+			escribir "  dP**b8    db    88b 88  dP*Yb      88        db        88**Yb  dP*Yb  88b 88  8888b.    db ";
+			escribir " dP        dPYb   88Yb88 dP   Yb     88       dPYb       88__dP dP   Yb 88Yb88  8I  Yb   dPYb ";
+			escribir " Yb **88  dP__Yb  88 Y88 Yb   dP     88  .o  dP__Yb      88*Yb  Yb   dP 88 Y88  8I  dY  dP__Yb ";
+			escribir "  YboodP dP****Yb 88  Y8  YbodP      88ood8 dP****Yb     88  Yb  YbodP  88  Y8  8888Y* dP****Yb ";                                                                                                    
 		34:
-			Escribir  "Gano la partida";
-			
-//			escribir "     _______ _______ _       _______    _______ _______ ______________________________  _______  ";
-//			escribir "    (  ____ (  ___  | (    /(  ___  )  (  ____ |  ___  |  ____ )__   __|__   __(  __  \(  ___  ) ";
-//			escribir "    | (    \/ (   ) |  \  ( | (   ) |  | (    )| (   ) | (    )|  ) (     ) (  | (  \  ) (   ) |";
-//			escribir "    | |     | (___) |   \ | | |   | |  | (____)| (___) | (____)|  | |     | |  | |   ) | (___) |";
-//			escribir "    | | ____|  ___  | (\ \) | |   | |  |  _____)  ___  |     __)  | |     | |  | |   | |  ___  |";
-//			escribir "    | | \_  ) (   ) | | \   | |   | |  | (     | (   ) | (\ (     | |     | |  | |   ) | (   ) |";
-//			escribir "    | (___) | )   ( | )  \  | (___) |  | )     | )   ( | ) \ \__  | |  ___) (__| (__/  ) )   ( |";
-//			escribir "    (_______)/     \|/    )_|_______)  |/      |/     \|/   \__/  )_(  \_______(______/|/     \|";
-//			escribir "                                                                                                ";
+			escribir "   dP**b8    db    88b 88  dP*Yb    88        db      88**Yb    db    88**Yb 888888 88  8888b.    db ";
+			escribir "  dP        dPYb   88Yb88 dP   Yb   88       dPYb     88__dP   dPYb   88__dP   88   88  8I  Yb   dPYb ";
+			escribir "  Yb **88  dP__Yb  88 Y88 Yb   dP   88  .o  dP__Yb    88***   dP__Yb  88*Yb    88   88  8I  dY  dP__Yb ";
+			escribir "   YboodP dP****Yb 88  Y8  YbodP    88ood8 dP****Yb   88     dP****Yb 88  Yb   88   88  8888Y* dP****Yb ";                                                                                               
 		35:
-			Escribir  "Gano el partido";
-			
-//			escribir "     _______ _______ _       _______    _______ _          _______ _______ ______________________________  _______ ";
-//			escribir "    (  ____ (  ___  | (    /(  ___  )  (  ____ ( \        (  ____ |  ___  |  ____ )__   __|__   __(  __  \(  ___  )";
-//			escribir "    | (    \/ (   ) |  \  ( | (   ) |  | (    \/ (        | (    )| (   ) | (    )|  ) (     ) (  | (  \  ) (   ) |";
-//			escribir "    | |     | (___) |   \ | | |   | |  | (__   | |        | (____)| (___) | (____)|  | |     | |  | |   ) | |   | |";
-//			escribir "    | | ____|  ___  | (\ \) | |   | |  |  __)  | |        |  _____)  ___  |     __)  | |     | |  | |   | | |   | |";
-//			escribir "    | | \_  ) (   ) | | \   | |   | |  | (     | |        | (     | (   ) | (\ (     | |     | |  | |   ) | |   | |";
-//			escribir "    | (___) | )   ( | )  \  | (___) |  | (____/\ (____/\  | )     | )   ( | ) \ \__  | |  ___) (__| (__/  ) (___) |";
-//			escribir "    (_______)/     \|/    )_|_______)  (_______(_______/  |/      |/     \|/   \__/  )_(  \_______(______/(_______)";
-//			escribir "  ";                                                                                                                 
+			escribir "   dP**b8    db    88b 88  dP*Yb    888888 88       88**Yb    db    88**Yb 888888 88  8888b.   dP*Yb ";
+			escribir "  dP        dPYb   88Yb88 dP   Yb   88__   88       88__dP   dPYb   88__dP   88   88  8I  Yb  dP   Yb ";
+			escribir "  Yb **88  dP__Yb  88 Y88 Yb   dP   88**   88  .o   88***   dP__Yb  88*Yb    88   88  8I  dY  Yb   dP ";
+			escribir "   YboodP dP****Yb 88  Y8  YbodP    888888 88ood8   88     dP****Yb 88  Yb   88   88  8888Y*   YbodP ";                                                                                                         
 		36:			
-			Escribir  "Gano";
-			
-//			escribir "     _______ _______ _       _______  ";
-//			escribir "    (  ____ (  ___  | (    /(  ___  )  ";
-//			escribir "    | (    \/ (   ) |  \  ( | (   ) |  ";
-//			escribir "    | |     | (___) |   \ | | |   | |  ";
-//			escribir "    | | ____|  ___  | (\ \) | |   | |  ";
-//			escribir "    | | \_  ) (   ) | | \   | |   | |   ";
-//			escribir "    | (___) | )   ( | )  \  | (___) |  ";
-//			escribir "    (_______)/     \|/    )_|_______)  ";
+			escribir "   dP**b8    db    88b 88  dP*Yb ";
+			escribir "  dP        dPYb   88Yb88 dP   Yb ";
+			escribir "  Yb **88  dP__Yb  88 Y88 Yb   dP ";
+			escribir "   YboodP dP****Yb 88  Y8  YbodP ";
 		-1:
-			Escribir  "Se va al mazo";
-			
-//			escribir "     _______ _______            _______    _______ _          _______ _______ _______ _______ ";
-//			escribir "    (  ____ (  ____ \  |\     /(  ___  )  (  ___  | \        (       |  ___  ) ___   |  ___  )";
-//			escribir "    | (    \/ (    \/  | )   ( | (   ) |  | (   ) | (        | () () | (   ) \/   )  | (   ) |";
-//			escribir "    | (_____| (__      | |   | | (___) |  | (___) | |        | || || | (___) |   /   ) |   | |";
-//			escribir "    (_____  )  __)     ( (   ) )  ___  |  |  ___  | |        | |(_)| |  ___  |  /   /| |   | |";
-//			escribir "          ) | (         \ \_/ /| (   ) |  | (   ) | |        | |   | | (   ) | /   / | |   | |";
-//			escribir "    /\____) | (____/\    \   / | )   ( |  | )   ( | (____/\  | )   ( | )   ( |/   (_/\ (___) |";
-//			escribir "    \_______|_______/     \_/  |/     \|  |/     \(_______/  |/     \|/     \(_______(_______)";
+			escribir "  .dP*Y8 888888   Yb    dP    db         db    88       8b    d8    db    8888P  dP*Yb ";
+			escribir "  `Ybo.* 88__      Yb  dP    dPYb       dPYb   88       88b  d88   dPYb     dP  dP   Yb ";
+			escribir "  o.`Y8b 88**       YbdP    dP__Yb     dP__Yb  88  .o   88YbdP88  dP__Yb   dP   Yb   dP ";
+			escribir "  8bodPo 888888      YP    dP****Yb   dP****Yb 88ood8   88 YY 88 dP****Yb d8888  YbodP ";
+
 		-8:
-			Escribir  "Acepto";
-			
-//			escribir "     _______ _______ _______ _______________________         ";
-//			escribir "    (  ___  |  ____ (  ____ (  ____ )__   __(  ___  )        ";
-//			escribir "    | (   ) | (    \/ (    \/ (    )|  ) (  | (   ) |        ";
-//			escribir "    | (___) | |     | (__   | (____)|  | |  | |   | |        ";
-//			escribir "    |  ___  | |     |  __)  |  _____)  | |  | |   | |        ";
-//			escribir "    | (   ) | |     | (     | (        | |  | |   | |        ";
-//			escribir "    | )   ( | (____/\ (____/\ )        | |  | (___) |        ";
-//			escribir "    |/     \(_______(_______//         )_(  (_______)        ";
-//			escribir "                                                             ";
+			escribir "     db     dP**b8 888888 88**Yb 888888  dP*Yb ";
+			escribir "    dPYb   dP   `* 88__   88__dP   88   dP   Yb ";
+			escribir "   dP__Yb  Yb      88**   88***    88   Yb   dP ";
+			escribir "  dP****Yb  YboodP 888888 88       88    YbodP ";
 		-9:
-			Escribir  "rechazo:";
-//			escribir "     _______ _______ _______         _______ _______ _______ ";
-//			escribir "    (  ____ |  ____ (  ____ \\     /(  ___  ) ___   |  ___  )";
-//			escribir "    | (    )| (    \/ (    \/ )   ( | (   ) \/   )  | (   ) |";
-//			escribir "    | (____)| (__   | |     | (___) | (___) |   /   ) |   | |";
-//			escribir "    |     __)  __)  | |     |  ___  |  ___  |  /   /| |   | |";
-//			escribir "    | (\ (  | (     | |     | (   ) | (   ) | /   / | |   | |";
-//			escribir "    | ) \ \_| (____/\ (____/\ )   ( | )   ( |/   (_/\ (___) |";
-//			escribir "    |/   \__(_______(_______//     \|/     \(_______(_______)";
-//			escribir "                                                             ";
-		1:
-			Escribir  "envido";
-//			escribir "   _______ _              _______________  _______                                                             ";
-//			escribir "  (  ____ ( (    /|\     /\__   __(  __  \(  ___  )                                                            ";
-//			escribir "  | (    \/  \  ( | )   ( |  ) (  | (  \  ) (   ) |                                                            ";
-//			escribir "  | (__   |   \ | | |   | |  | |  | |   ) | |   | |                                                            ";
-//			escribir "  |  __)  | (\ \) ( (   ) )  | |  | |   | | |   | |                                                            ";
-//			escribir "  | (     | | \   |\ \_/ /   | |  | |   ) | |   | |                                                            ";
-//			escribir "  | (____/\ )  \  | \   / ___) (__| (__/  ) (___) |                                                            ";
-//			escribir "  (_______//    )_)  \_/  \_______(______/(_______)                                                            ";
-//			escribir "                                                                                                               ";
+			escribir "  88**Yb 888888  dP**b8 88  88    db    8888P  dP*Yb ";
+			escribir "  88__dP 88__   dP   `* 88  88   dPYb     dP  dP   Yb ";
+			escribir "  88*Yb  88**   Yb      888888  dP__Yb   dP   Yb   dP ";
+			escribir "  88  Yb 888888  YboodP 88  88 dP****Yb d8888  YbodP ";
+		1:			
+			escribir "  888888 88b 88 Yb    dP 88 8888b.   dP*Yb ";
+			escribir "  88__   88Yb88  Yb  dP  88  8I  Yb dP   Yb ";
+			escribir "  88**   88 Y88   YbdP   88  8I  dY Yb   dP ";
+			escribir "  888888 88  Y8    YP    88 8888Y*   YbodP ";
 		11:	
-			Escribir "envido-envido";
-//			escribir "   _______ _              _______________  _______             _______ _              _______________  _______ ";
-//			escribir "  (  ____ ( (    /|\     /\__   __(  __  \(  ___  )           (  ____ ( (    /|\     /\__   __(  __  \(  ___  )";
-//			escribir "  | (    \/  \  ( | )   ( |  ) (  | (  \  ) (   ) |           | (    \/  \  ( | )   ( |  ) (  | (  \  ) (   ) |";
-//			escribir "  | (__   |   \ | | |   | |  | |  | |   ) | |   | |   _____   | (__   |   \ | | |   | |  | |  | |   ) | |   | |";
-//			escribir "  |  __)  | (\ \) ( (   ) )  | |  | |   | | |   | |  (_____)  |  __)  | (\ \) ( (   ) )  | |  | |   | | |   | |";
-//			escribir "  | (     | | \   |\ \_/ /   | |  | |   ) | |   | |           | (     | | \   |\ \_/ /   | |  | |   ) | |   | |";
-//			escribir "  | (____/\ )  \  | \   / ___) (__| (__/  ) (___) |           | (____/\ )  \  | \   / ___) (__| (__/  ) (___) |";
-//			escribir "  (_______//    )_)  \_/  \_______(______/(_______)           (_______//    )_)  \_/  \_______(______/(_______)";
-//			escribir "                                                                                                               ";
+			escribir "  888888 88b 88 Yb    dP 88 8888b.   dP*Yb          888888 88b 88 Yb    dP 88  8888b.   dP*Yb ";
+			escribir "  88__   88Yb88  Yb  dP  88  8I  Yb dP   Yb   ____  88__   88Yb88  Yb  dP  88  8I  Yb  dP   Yb ";
+			escribir "  88**   88 Y88   YbdP   88  8I  dY Yb   dP   ****  88**   88 Y88   YbdP   88  8I  dY  Yb   dP ";
+			escribir "  888888 88  Y8    YP    88 8888Y*   YbodP          888888 88  Y8    YP    88  8888Y*   YbodP ";
 		2:	
-//			escribir "   _______ _______ _______ _            _______ _              _______________  _______                        ";
-//			escribir "  (  ____ |  ____ (  ___  | \          (  ____ ( (    /|\     /\__   __(  __  \(  ___  )                       ";
-//			escribir "  | (    )| (    \/ (   ) | (          | (    \/  \  ( | )   ( |  ) (  | (  \  ) (   ) |                       ";
-//			escribir "  | (____)| (__   | (___) | |          | (__   |   \ | | |   | |  | |  | |   ) | |   | |                       ";
-//			escribir "  |     __)  __)  |  ___  | |          |  __)  | (\ \) ( (   ) )  | |  | |   | | |   | |                       ";
-//			escribir "  | (\ (  | (     | (   ) | |          | (     | | \   |\ \_/ /   | |  | |   ) | |   | |                       ";
-//			escribir "  | ) \ \_| (____/\ )   ( | (____/\    | (____/\ )  \  | \   / ___) (__| (__/  ) (___) |                       ";
-//			escribir "  |/   \__(_______//     \(_______/    (_______//    )_)  \_/  \_______(______/(_______)                       ";
-//			escribir "      
-			Escribir "real envido";
+			escribir "  88**Yb 888888    db    88       888888 88b 88 Yb    dP 88  8888b.   dP*Yb ";
+			escribir "  88__dP 88__     dPYb   88       88__   88Yb88  Yb  dP  88  8I  Yb dP   Yb ";
+			escribir "  88*Yb  88**    dP__Yb  88  .o   88**   88 Y88   YbdP   88  8I  dY Yb   dP ";
+			escribir "  88  Yb 888888 dP****Yb 88ood8   888888 88  Y8    YP    88  8888Y*   YbodP ";
 		3:	
-//			escribir "   _______ _______ _   ________________     _______ _              _______________  _______                    ";
-//			escribir "  (  ____ (  ___  | \  \__   __(  ___  )   (  ____ ( (    /|\     /\__   __(  __  \(  ___  )                   ";
-//			escribir "  | (    \/ (   ) | (     ) (  | (   ) |   | (    \/  \  ( | )   ( |  ) (  | (  \  ) (   ) |                   ";
-//			escribir "  | (__   | (___) | |     | |  | (___) |   | (__   |   \ | | |   | |  | |  | |   ) | |   | |                   ";
-//			escribir "  |  __)  |  ___  | |     | |  |  ___  |   |  __)  | (\ \) ( (   ) )  | |  | |   | | |   | |                   ";
-//			escribir "  | (     | (   ) | |     | |  | (   ) |   | (     | | \   |\ \_/ /   | |  | |   ) | |   | |                   ";
-//			escribir "  | )     | )   ( | (____/\ |  | )   ( |   | (____/\ )  \  | \   / ___) (__| (__/  ) (___) |                   ";
-//			escribir "  |/      |/     \(_______)_(  |/     \|   (_______//    )_)  \_/  \_______(______/(_______)                   ";
-//			escribir "                                                                                                               ";
-			Escribir "Falta envido";
+			escribir "  888888    db    88     888888    db      888888 88b 88 Yb    dP 88  8888b.   dP*Yb ";
+			escribir "  88__     dPYb   88       88     dPYb     88__   88Yb88  Yb  dP  88  8I  Yb  dP   Yb ";
+			escribir "  88**    dP__Yb  88  .o   88    dP__Yb    88**   88 Y88   YbdP   88  8I  dY  Yb   dP ";
+			escribir "  88     dP****Yb 88ood8   88   dP****Yb   888888 88  Y8    YP    88  8888Y*   YbodP ";
 		12:
-//			escribir "    _________        _______  _______ _______     _______ _______ _       _       _______ ______  _______    ";
-//			escribir "    \__    _/\     /(  ____  ( (____ (  ___  )   (  ____ (  ___  | \     ( \     (  ___  |  __  \(  ___  )	";
-//			escribir "       )  ( | )   ( | (    \/| (    \/ (   ) |   | (    \/ (   ) | (     | (     | (   ) | (  \  ) (   ) |	";
-//			escribir "       |  | | |   | | (__    | |     | |   | |   | |     | (___) | |     | |     | (___) | |   ) | |   | |	";
-//			escribir "       |  | | |   | |  __)   | | ____| |   | |   | |     |  ___  | |     | |     |  ___  | |   | | |   | |	";
-//			escribir "       |  | | |   | | (      | | \_  ) |   | |   | |     | (   ) | |     | |     | (   ) | |   ) | |   | |	";
-//			escribir "    |\_)  ) | (___) | (____/\| (___) | (___) |   | (____/\ )   ( | (____/\ (____/\ )   ( | (__/  ) (___) |	";
-//			escribir "    (____/  (_______(_______/|_______|_______)   (_______//     \(_______(_______//     \(______/(_______)	";
-//			escribir "                                                                                                             ";
-			Escribir "Jugar callado";	
-		4:
-			
-//			escribir "    ________________         _______ _______   ";                                                                    
-//			escribir "    \__   __(  ____ )\     /(  ____ (  ___  )  ";                                                                    
-//			escribir "       ) (  | (    )| )   ( | (    \/ (   ) |   ";                                                                   
-//			escribir "       | |  | (____)| |   | | |     | |   | |   ";                                                                   
-//			escribir "       | |  |     __) |   | | |     | |   | |   ";                                                                   
-//			escribir "       | |  | (\ (  | |   | | |     | |   | |    ";                                                                  
-//			escribir "       | |  | ) \ \_| (___) | (____/\ (___) |      ";                                                                
-//			escribir "       )_(  |/   \__(_______|_______(_______)        ";                                                              
-//			escribir "                                                 ";                                                                  
-			Escribir "Truco";
+			escribir "   88888 88   88  dP**b8    db    88**Yb    dP**b8    db    88     88        db     8888b.   dP*Yb ";
+			escribir "      88 88   88 dP        dPYb   88__dP   dP   `*   dPYb   88     88       dPYb    8I  Yb  dP   Yb ";
+			escribir "  o.  88 Y8   8P Yb **88  dP__Yb  88*Yb    Yb       dP__Yb  88  .o 88  .o  dP__Yb   8I  dY  Yb   dP ";
+			escribir "  *bodPo `YbodPo  YboodP dP****Yb 88  Yb    YboodP dP****Yb 88ood8 88ood8 dP****Yb  8888Y*   YbodP ";
+
+		4:			
+			escribir "  888888 88**Yb 88   88  dP**b8  dP*Yb ";
+			escribir "    88   88__dP 88   88 dP   `* dP   Yb ";
+			escribir "    88   88*Yb  Y8   8P Yb      Yb   dP ";
+			escribir "    88   88  Yb `YbodPo  YboodP  YbodP ";
 		5:	
-//			escribir "    _______        ________________ _______ _______    _______ _______   ________________         _______ _______  ";
-//			escribir "    (  ___  )\     /\__   __(  ____ (  ____ |  ___  )  (  ____ |  ____ \  \__   __(  ____ )\     /(  ____ (  ___  )  ";
-//			escribir "    | (   ) | )   ( |  ) (  | (    \/ (    )| (   ) |  | (    )| (    \/     ) (  | (    )| )   ( | (    \/ (   ) |  ";
-//			escribir "    | |   | | |   | |  | |  | (__   | (____)| |   | |  | (____)| (__         | |  | (____)| |   | | |     | |   | |   ";
-//			escribir "    | |   | | |   | |  | |  |  __)  |     __) |   | |  |     __)  __)        | |  |     __) |   | | |     | |   | |  ";
-//			escribir "    | | /\| | |   | |  | |  | (     | (\ (  | |   | |  | (\ (  | (           | |  | (\ (  | |   | | |     | |   | |   ";
-//			escribir "    | (_\ \ | (___) |__) (__| (____/\ ) \ \_| (___) |  | ) \ \_| (____/\     | |  | ) \ \_| (___) | (____/\ (___) |   ";
-//			escribir "    (____\/_|_______)_______(_______//   \__(_______)  |/   \__(_______/     )_(  |/   \__(_______|_______(_______)   ";
-//			escribir "                                                                                                                      ";
-			Escribir "Quiero re truco";	
+			escribir "   dP*Yb  88   88 88 888888 88**Yb  dP*Yb    88**Yb 888888   888888 88**Yb 88   88  dP**b8  dP*Yb ";
+			escribir "  dP   Yb 88   88 88 88__   88__dP dP   Yb   88__dP 88__       88   88__dP 88   88 dP   `* dP   Yb ";
+			escribir "  Yb b dP Y8   8P 88 88**   88*Yb  Yb   dP   88*Yb  88**       88   88*Yb  Y8   8P Yb      Yb   dP ";
+			escribir "   *YoYo `YbodPo  88 888888 88  Yb  YbodP    88  Yb 888888     88   88  Yb `YbodPo  YboodP  YbodP ";
 		6:		
-//			escribir "     _______        ________________ _______ _______            _______ _       _______       ___              ";    
-//			escribir "    (  ___  )\     /\__   __(  ____ (  ____ |  ___  )  |\     /(  ___  | \     (  ____ \     /   )            ";     
-//			escribir "    | (   ) | )   ( |  ) (  | (    \/ (    )| (   ) |  | )   ( | (   ) | (     | (    \/    / /) |            ";     
-//			escribir "    | |   | | |   | |  | |  | (__   | (____)| |   | |  | |   | | (___) | |     | (__       / (_) (_           ";     
-//			escribir "    | |   | | |   | |  | |  |  __)  |     __) |   | |  ( (   ) )  ___  | |     |  __)     (____   _)          ";     
-//			escribir "    | | /\| | |   | |  | |  | (     | (\ (  | |   | |   \ \_/ /| (   ) | |     | (             ) (            ";     
-//			escribir "    | (_\ \ | (___) |__) (__| (____/\ ) \ \_| (___) |    \   / | )   ( | (____/\ (____/\       | |             ";
-//			escribir "    (____\/_|_______)_______(_______//   \__(_______)     \_/  |/     \(_______(_______/       (_)             ";    
-//			escribir "   ";
-			Escribir "Quiero vale"; 
+			escribir "   dP*Yb  88   88 88 888888 88**Yb  dP*Yb    Yb    dP    db    88     888888     dP88 ";
+			escribir "  dP   Yb 88   88 88 88__   88__dP dP   Yb    Yb  dP    dPYb   88     88__      dP 88 ";
+			escribir "  Yb b dP Y8   8P 88 88**   88*Yb  Yb   dP     YbdP    dP__Yb  88  .o 88**     d888888 ";
+			escribir "   `*YoYo `YbodPo 88 888888 88  Yb  YbodP       YP    dP****Yb 88ood8 888888       88 ";
+
 	FinSegun
-	Escribir  Sin Saltar "";
+	Escribir  " ";
+	Escribir  " ";
+
 FinSubProceso
 
 SubProceso  erroresVarios(error)
 	segun error Hacer
-		"envidoPrimero":
-			Escribir "El envido esta primero";
-//			escribir "  #######  ####              #######  ##   ##  ##   ##   ####    #####     #####           "; 
-//			escribir "   ##   #   ##                ##   #  ###  ##  ##   ##    ##      ## ##   ##   ##          "; 
-//			escribir "   ## #     ##                ## #    #### ##   ## ##     ##      ##  ##  ##   ##            "; 
-//			escribir "   ####     ##                ####    ## ####   ## ##     ##      ##  ##  ##   ##            ";
-//			escribir "   ## #     ##   #            ## #    ##  ###    ###      ##      ##  ##  ##   ##            ";
-//			escribir "   ##   #   ##  ##            ##   #  ##   ##    ###      ##      ## ##   ##   ##            ";
-//			escribir "  #######  #######           #######  ##   ##     #      ####    #####     #####             ";
-//			escribir " ";
-//			escribir " ";
-//			escribir " #######   #####   ######     ##              ######   ######    ####    ##   ##  #######  ######    ##### ";
-//			escribir " ##   #  ##   ##  # ## #    ####              ##  ##   ##  ##    ##     ### ###   ##   #   ##  ##  ##   ## ";
-//			escribir " ## #    #          ##     ##  ##             ##  ##   ##  ##    ##     #######   ## #     ##  ##  ##   ##    ## ";
-//			escribir "  ####     #####     ##     ##  ##             #####    #####     ##     #######   ####     #####   ##   ## ";
-//			escribir "  ## #         ##    ##     ######             ##       ## ##     ##     ## # ##   ## #     ## ##   ##   ## ";
-//			escribir "  ##   #  ##   ##    ##     ##  ##             ##       ##  ##    ##     ##   ##   ##   #   ##  ##  ##   ##    ## ";
-//			escribir " #######   #####    ####    ##  ##            ####     #### ##   ####    ##   ##  #######  #### ##   ##### ";
-//			
+		"envidoPrimero":			
+			escribir "  888888 88       888888 88b 88 Yb    dP 88 8888b.   dP*Yb  ";  
+			escribir "  88__   88       88__   88Yb88  Yb  dP  88  8I  Yb dP   Yb ";  
+			escribir "  88**   88  .o   88**   88 Y88   YbdP   88  8I  dY Yb   dP ";  
+			escribir "  888888 88ood8   888888 88  Y8    YP    88 8888Y*   YbodP  ";  
+			
+			escribir "  888888 .dP*Y8 888888    db    88**Yb 88**Yb 88 8b    d8 888888 88**Yb  dP*Yb ";
+			escribir "  88__   `Ybo.*   88     dPYb   88__dP 88__dP 88 88b  d88 88__   88__dP dP   Yb ";
+			escribir "  88**   o.`Y8b   88    dP__Yb  88***  88*Yb  88 88YbdP88 88**   88*Yb  Yb   dP ";
+			escribir "  888888 8bodPo   88   dP****Yb 88     88  Yb 88 88 YY 88 888888 88  Yb  YbodP ";
+
 		"jugadaInvalida":
-//			escribir "      ##   ##   ##    ####     ##     #####      ##                ##     ##   ##  ##   ##    ##     ####      ####    #####      ## ";
-//			escribir "           ##   ##   ##  ##   ####     ## ##    ####                      ###  ##  ##   ##   ####     ##        ##      ## ##    #### ";
-//			escribir "     ###   ##   ##  ##       ##  ##    ##  ##  ##  ##             ###     #### ##   ## ##   ##  ##    ##        ##      ##  ##  ##  ## ";
-//			escribir "      ##   ##   ##  ##       ##  ##    ##  ##  ##  ##              ##     ## ####   ## ##   ##  ##    ##        ##      ##  ##  ##  ## ";
-//			escribir "      ##   ##   ##  ##  ###  ######    ##  ##  ######              ##     ##  ###    ###    ######    ##   #    ##      ##  ##  ###### ";
-//			escribir "  ##  ##   ##   ##   ##  ##  ##  ##    ## ##   ##  ##              ##     ##   ##    ###    ##  ##    ##  ##    ##      ## ##   ##  ## ";
-//			escribir "  ##  ##    #####     #####  ##  ##   #####    ##  ##             ####    ##   ##     #     ##  ##   #######   ####    #####    ##  ## ";
-//			escribir "   #### ";
-			Escribir "Jugar callado";
-		"envidoInvalido":
-			Escribir "No se puede cantar envido pasada la primera ronda";
-//			escribir "  ##   ##   #####             #####   #######           ######   ##   ##  #######  #####    #######	";
-//			escribir "  ###  ##  ##   ##           ##   ##   ##   #            ##  ##  ##   ##   ##   #   ## ##    ##   #	";
-//			escribir "  #### ##  ##   ##           #         ## #              ##  ##  ##   ##   ## #     ##  ##   ## #	";	
-//			escribir "  ## ####  ##   ##            #####    ####              #####   ##   ##   ####     ##  ##   ####	";
-//			escribir "  ##  ###  ##   ##                ##   ## #              ##      ##   ##   ## #     ##  ##   ## #	";
-//			escribir "  ##   ##  ##   ##           ##   ##   ##   #            ##      ##   ##   ##   #   ## ##    ##   #	";
-//			escribir "  ##   ##   #####             #####   #######           ####      #####   #######  #####    #######	";
-//			escribir "													";
-//			escribir "													";
-//			escribir "    ####     ##     ##   ##  ######     ##     ######            #######  ##   ##  ##   ##   ####    #####     #####  ";
-//			escribir "   ##  ##   ####    ###  ##  # ## #    ####     ##  ##            ##   #  ###  ##  ##   ##    ##      ## ##   ##   ##  ";
-//			escribir "  ##       ##  ##   #### ##    ##     ##  ##    ##  ##            ## #    #### ##   ## ##     ##      ##  ##  ##   ##  ";
-//			escribir "  ##       ##  ##   ## ####    ##     ##  ##    #####             ####    ## ####   ## ##     ##      ##  ##  ##   ##  ";
-//			escribir "  ##       ######   ##  ###    ##     ######    ## ##             ## #    ##  ###    ###      ##      ##  ##  ##   ##  ";
-//			escribir "   ##  ##  ##  ##   ##   ##    ##     ##  ##    ##  ##            ##   #  ##   ##    ###      ##      ## ##   ##   ##  ";
-//			escribir "    ####   ##  ##   ##   ##   ####    ##  ##   #### ##           #######  ##   ##     #      ####    #####     #####   ";
-//			escribir "															  ";
-//			escribir "															";
-//			escribir "  ######     ##      #####     ##     #####      ##              ####       ##              ######   ######    ####    ##   ##  #######  ######	";
-//			escribir "   ##  ##   ####    ##   ##   ####     ## ##    ####              ##       ####              ##  ##   ##  ##    ##     ### ###   ##   #   ##  ##	";
-//			escribir "   ##  ##  ##  ##   #        ##  ##    ##  ##  ##  ##             ##      ##  ##             ##  ##   ##  ##    ##     #######   ## #     ##  ##	";
-//			escribir "   #####   ##  ##    #####   ##  ##    ##  ##  ##  ##             ##      ##  ##             #####    #####     ##     #######   ####     #####	";
-//			escribir "   ##      ######        ##  ######    ##  ##  ######             ##   #  ######             ##       ## ##     ##     ## # ##   ## #     ## ##	";
-//			escribir "   ##      ##  ##   ##   ##  ##  ##    ## ##   ##  ##             ##  ##  ##  ##             ##       ##  ##    ##     ##   ##   ##   #   ##  ##	";
-//			escribir "  ####     ##  ##    #####   ##  ##   #####    ##  ##            #######  ##  ##            ####     #### ##   ####    ##   ##  #######  #### ##	";
-//			escribir "																			";
-//			escribir "																			";
-//			escribir "  ######    #####   ##   ##  #####      ##    ";
-//			escribir "   ##  ##  ##   ##  ###  ##   ## ##    ####   ";
-//			escribir "   ##  ##  ##   ##  #### ##   ##  ##  ##  ##  ";
-//			escribir "   #####   ##   ##  ## ####   ##  ##  ##  ##  ";
-//			escribir "   ## ##   ##   ##  ##  ###   ##  ##  ######  ";
-//			escribir "   ##  ##  ##   ##  ##   ##   ## ##   ##  ##  ";
-//			escribir "  #### ##   #####   ##   ##  #####    ##  #   ";
+			
+			escribir "   88888 88   88  dP**b8    db    8888b.    db        88 88b 88 Yb    dP    db    88     88 8888b.     db ";
+			escribir "      88 88   88 dP        dPYb   8I  Yb   dPYb       88 88Yb88  Yb  dP    dPYb   88     88  8I  Yb   dPYb ";
+			escribir "  o.  88 Y8   8P Yb **88  dP__Yb  8I  dY  dP__Yb      88 88 Y88   YbdP    dP__Yb  88  .o 88  8I  dY  dP__Yb ";
+			escribir "  *bodPo `YbodPo  YboodP dP****Yb 8888Y*  dP****Yb    88 88  Y8    YP    dP****Yb 88ood8 88 8888Y*  dP****Yb ";
+			
+
+		"envidoInvalido":	
+			
+			escribir "  88b 88  dP*Yb    .dP*Y8 888888   88**Yb 88   88 888888 8888b.  888888    dP**b8    db    88b 88 888888    db    88**Yb";
+			escribir "  88Yb88 dP   Yb   `Ybo.* 88__     88__dP 88   88 88__    8I  Yb 88__     dP   `*   dPYb   88Yb88   88     dPYb   88__dP";
+			escribir "  88 Y88 Yb   dP   o.`Y8b 88**     88***  Y8   8P 88**    8I  dY 88**     Yb       dP__Yb  88 Y88   88    dP__Yb  88*Yb ";
+			escribir "  88  Y8  YbodP    8bodPo 888888   88     `YbodPo 888888 8888Y*  888888    YboodP dP****Yb 88  Y8   88   dP****Yb 88  Yb ";
+			
+			escribir "     888888 88b 88 Yb    dP 88 8888b.   dP*Yb    88**Yb    db    .dP*Y8    db    8888b.     db   ";
+			escribir "     88__   88Yb88  Yb  dP  88  8I  Yb dP   Yb   88__dP   dPYb   `Ybo.*   dPYb    8I  Yb   dPYb  ";
+			escribir "     88**   88 Y88   YbdP   88  8I  dY Yb   dP   88***   dP__Yb  o.`Y8b  dP__Yb   8I  dY  dP__Yb ";
+			escribir "     888888 88  Y8    YP    88 8888Y*   YbodP    88     dP****Yb 8bodPo dP****Yb 8888Y*  dP****Yb ";
+			
+			escribir "     88        db      88**Yb 88**Yb 88 8b    d8 888888 88**Yb   88**Yb  dP*Yb  88b 88 8888b.     db ";
+			escribir "     88       dPYb     88__dP 88__dP 88 88b  d88 88__   88__dP   88__dP dP   Yb 88Yb88  8I  Yb   dPYb ";
+			escribir "     88  .o  dP__Yb    88***  88*Yb  88 88YbdP88 88**   88*Yb    88*Yb  Yb   dP 88 Y88  8I  dY  dP__Yb ";
+			escribir "     88ood8 dP****Yb   88     88  Yb 88 88 YY 88 888888 88  Yb   88  Yb  YbodP  88  Y8 8888Y*  dP****Yb ";
+
 			////Limpiar Pantalla;
 	FinSegun
 FinSubProceso
@@ -1532,13 +1394,18 @@ subProceso jugadorGanador <-EJECUTAR_TRUCO(cartasJugador1 Por Referencia, cartas
 	Definir  sigoIterando, primero , aceptado Como Logico;
 	primero <- Verdadero;
 	aceptado <- Verdadero;
-	cantaPrimero <- jugadorMano 
+	cantaPrimero <- 1 
 	si jugadorMano = 1 Entonces
 		cantaSegundo <- 2;
 	SiNo
 		cantaSegundo <- 1;
 	FinSi
+	
+//	Escribir "o j 1";
+	
 	OrdenarCartas(cartasJugador1 ,vMasoReferencia);
+	
+//	Escribir "o j 2";
 	//ordeno cartas jugador 2
 	OrdenarCartas(cartasJugador2 ,vMasoReferencia);
 	
@@ -1993,14 +1860,14 @@ subProceso jugadorGanador <- EJECUTAR_ENVIDO(cartasJugador1 Por Referencia, cart
 			
 		SiNo
 			Escribir  "Puntos envido jugador ", cantaPrimero , " son:" , ptosA;
-			Escribir "Cartas del envido jugador : ", cantaPrimero;
-			//	DibujarEnvido(cartasJugador1);		
-			Esperar  2 Segundos	
+//			Escribir "Cartas del envido jugador : ", cantaPrimero;
+//			DibujarEnvido(cartasJugador1);		
+//			Esperar  2 Segundos	
 			
 			Escribir  "Puntos envido jugador ", cantaSegundo , " son:" , ptosB;
-			Escribir "Cartas del envido jugador: ", cantaSegundo ;
-			//DibujarEnvido(cartasJugador2);				
-			esperar 2  Segundos				
+//			Escribir "Cartas del envido jugador: ", cantaSegundo ;
+//			DibujarEnvido(cartasJugador2);				
+//			esperar 2  Segundos				
 		FinSi
 		esperar 3  Segundos
 		Limpiar Pantalla 
@@ -2097,7 +1964,7 @@ SubProceso   reglas(a)
 	escribir "    |\_)  ) | (___) | (____/\ (___) | (___) |  | (__/  ) (____/\ (____/\     | |  | ) \ \_| (___) | (____/\ (___) (_)";
 	escribir "    (____/  (_______|_______(_______|_______)  (______/(_______(_______/     )_(  |/   \__(_______|_______(_______)  ";
 	escribir "                                                                                                                       "; 
-	Escribir "    REGLAS BASICAS:";
+//	Escribir "    REGLAS BASICAS:";
 	Escribir "";
 	Escribir "    *) No se juega con flor (3 cartas iguales)";
 	Escribir "    *) El envido sale de la suma de las cartas del mismo palo";
@@ -2162,7 +2029,7 @@ SubProceso  testTruco(a)
 	Escribir  "Puntos j1:", puntajeJ1 , " puntos j2:", puntajeJ2;
 	// si nivelEnvid -1 se fue al mazo
 	vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador1, vCartasJugador2 ,vMasoReferencia  , puntajeJ1, puntajeJ2 ,vMesa, nroRonda,1,nivelDeTruco)
-	Escribir  "After Puntos j1:", puntajeJ1 , " puntos j2:", puntajeJ2;
+//	Escribir  "After Puntos j1:", puntajeJ1 , " puntos j2:", puntajeJ2;
 	
 	
 FinSubProceso
@@ -2302,6 +2169,7 @@ Funcion  JugarPartida(a)
 							FinSi
 							
 						SiNo
+							Limpiar Pantalla
 							Escribir  " YA SE JUGO EL ENVIDO";
 						FinSi				
 					4:
@@ -2330,6 +2198,7 @@ Funcion  JugarPartida(a)
 									erroresVarios("envidoInvalido");
 									Esperar  2 Segundos		
 								SiNo
+									Escribir  "entrooo 1";
 									si jugadorMano = 1 Entonces
 										vganadoresxRonda(nroRonda) <- EJECUTAR_ENVIDO(vCartasJugador2, vCartasJugador1 , puntajeJ2, puntajeJ1, vMesa,nroRonda,2,nivelEnvido,seCantoFaltaEnvido);
 									SiNo
@@ -2349,26 +2218,30 @@ Funcion  JugarPartida(a)
 									seEjecutoTruco <- Verdadero;
 									nroRonda <- nroRonda +1 ;									
 								SiNo
-									Escribir  "33 YA SE JUGO EL TRUCO";						
+									Limpiar Pantalla
+									Escribir  "YA SE JUGO EL TRUCO";			
 								FinSi
 								
 							FinSi
-						FinSi
+						sino
 						si seEjecutoTruco = Falso Entonces
 							jugadorMano<-1 ;					
-							
-							si jugadorMano = 1 Entonces
+							Escribir  "entrooo 2" , vCartasJugador1(1), ":", vCartasJugador1(2) , ":" , vCartasJugador1(3), ":" , jugadorMano;
+//							si jugadorMano = 1 Entonces
 								vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador1, vCartasJugador2 ,vMasoReferencia  , puntajeJ1, puntajeJ2 ,vMesa, nroRonda,nroRonda, nivelTruco)
-							SiNo
-								vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador2, vCartasJugador1 ,vMasoReferencia  , puntajeJ2, puntajeJ1 ,vMesa, nroRonda,nroRonda, nivelTruco)
-							FinSi	
+//							SiNo
+//								vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador2, vCartasJugador1 ,vMasoReferencia  , puntajeJ2, puntajeJ1 ,vMesa, nroRonda,nroRonda, nivelTruco)
+//							FinSi	
 							seEjecutoTruco <- Verdadero;
 							nroRonda <- nroRonda +1 ;
 							
 						SiNo
-							Escribir  "22 YA SE JUGO EL TRUCO";						
+							Limpiar Pantalla
+
+							Escribir  "YA SE JUGO EL TRUCO";	
 						FinSi
-						
+					FinSi
+					
 					10:
 						// se fue al mazo de una
 						si jugadorMano = 1 Entonces
@@ -2433,9 +2306,9 @@ Funcion  JugarPartida(a)
 	
 FinFuncion
 Proceso Pruebas
-//	reglas(1);
-//	Esperar 5 Segundos
-	//Limpiar Pantalla;
+reglas(1);
+	Esperar 2 Segundos
+	Limpiar Pantalla;
 	//TestEnvido(1);
 	jugarPartida(1);
 	
