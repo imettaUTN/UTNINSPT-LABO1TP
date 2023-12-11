@@ -727,7 +727,7 @@ Fin SubProceso
 
 //BUSCA LA POSICION DE LA CARTA EN EL VECTOR
 SubProceso pos <- BuscarPosicionCarta(vec, carta)
-	Definir  r Como Entero;
+	Definir  r , nro Como Entero;
 	para r<-1 Hasta  40 con paso 1 Hacer
 		si vec[r] = carta Entonces		
 			pos <-r;
@@ -740,6 +740,7 @@ Fin SubProceso
 
 // DEVUELVE EL PALO DE LA CARTA
 SubProceso palito <- PaloCarta ( carta Por Valor )	
+	Definir  nro Como Entero;
 	//solo puede ser de 2 o 3 digitos
 	si ContarCantDigitos(carta) = 2 Entonces
 		palito <- Trunc(carta/10);
@@ -803,7 +804,7 @@ SubProceso  cartasEnvido(cartas Por Referencia)
 	Dimension  cartasDesordenadas[3];
 	
 	
-	mayorPalo <-  MayorPaloCartas( cartas(1), cartas(2), cartas(3) )
+	mayorPalo <-  MayorPaloCartas( cartas(1), cartas(2), cartas(3) );
 	
 	
 	para i <- 1 Hasta  3 Hacer
@@ -1129,7 +1130,7 @@ SubProceso  opc <-menuOpciones(op)
 			Escribir  "10: Irse al mazo";
 			Escribir  "11: No cantar:", "jugar callado";
 			
-			Leer  opc
+			Leer  opc;
 			
 			
 			Mientras  (opc <> 1 Y opc<>  4  y opc <>10 y opc <> 11)					
@@ -1147,7 +1148,7 @@ SubProceso  opc <-menuOpciones(op)
 			Escribir  "8: Aceptar";	
 			Escribir  "9: No aceptar";
 			Escribir  "10: Irse al mazo";
-			Leer  opc
+			Leer  opc;
 			
 			Mientras  (opc <> 1 Y opc<>  8 Y opc <> 9  Y opc<>  2 Y opc <> 3 Y opc <> 10 )					
 				Escribir  "Opcion incorrecta. Reingreso 1";	
@@ -1166,7 +1167,7 @@ SubProceso  opc <-menuOpciones(op)
 			Escribir  "8: Aceptar";	
 			Escribir  "9: No aceptar";	
 			Escribir  "10: Irse al mazo";
-			Leer  opc
+			Leer  opc;
 			
 			
 			Mientras  (opc<>  2 Y opc <> 3  Y opc <> 8 Y opc <> 9 Y opc <> 10)					
@@ -1185,7 +1186,7 @@ SubProceso  opc <-menuOpciones(op)
 			Escribir  "9: No aceptar";	
 			Escribir  "10: Irse al mazo";
 			Escribir  "";
-			Leer  opc
+			Leer  opc;
 			
 			
 			Mientras  (opc<>  3   Y opc <> 8 Y opc <> 9 Y opc <> 9 Y opc <> 10)					
@@ -1205,7 +1206,7 @@ SubProceso  opc <-menuOpciones(op)
 			Escribir  "8: Aceptar";	
 			Escribir  "9: No aceptar";
 			Escribir  "10: Irse al mazo";
-			Leer  opc
+			Leer  opc;
 			
 			
 			Mientras  ( opc <> 8 Y opc <> 9 Y opc <> 10 )					
@@ -1223,7 +1224,7 @@ SubProceso  opc <-menuOpciones(op)
 			Escribir  "8: Aceptar";	
 			Escribir  "9: No aceptar";	
 			Escribir  "10: Irse al mazo";
-			Leer  opc
+			Leer  opc;
 			
 			
 			Mientras  (opc<>  5  Y opc <> 8 Y opc <> 9 Y opc <> 10 )					
@@ -1242,7 +1243,7 @@ SubProceso  opc <-menuOpciones(op)
 			Escribir  "8: Aceptar";	
 			Escribir  "9: No aceptar";	
 			Escribir  "10: Irse al mazo";
-			Leer  opc
+			Leer  opc;
 			
 			
 			Mientras  ( opc <> 6  Y opc <> 8 Y opc <> 9 Y opc <> 10)					
@@ -1260,7 +1261,7 @@ SubProceso  opc <-menuOpciones(op)
 			Escribir  "8: Aceptar";	
 			Escribir  "9: No aceptar";	
 			Escribir  "10: Irse al mazo";
-			Leer  opc
+			Leer  opc;
 			
 			
 			Mientras  ( opc <> 8 Y opc <> 9 y opc <> 10 )					
@@ -1279,7 +1280,7 @@ SubProceso  opc <-menuOpciones(op)
 			Escribir  "3: Cantar Falta Envido";
 			Escribir  "10: Irse al mazo";
 			Escribir  "11: jugar callado";
-			Leer  opc
+			Leer  opc;
 			
 			
 			Mientras  (opc <> 1 Y opc<>  2 Y opc <> 3  y opc <> 10 y opc <> 11)					
@@ -1300,7 +1301,7 @@ SubProceso  opc <-menuOpciones(op)
 			Escribir  "10: Irse al mazo";
 			Escribir  "11: jugar callado";
 			
-			Leer  opc
+			Leer  opc;
 			
 			
 			Mientras  (opc <> 1 Y opc<>  2 Y opc <> 3  Y opc<>  4 y opc <>10 y opc <> 11)					
@@ -1394,7 +1395,7 @@ subProceso jugadorGanador <-EJECUTAR_TRUCO(cartasJugador1 Por Referencia, cartas
 	Definir  sigoIterando, primero , aceptado Como Logico;
 	primero <- Verdadero;
 	aceptado <- Verdadero;
-	cantaPrimero <- 1 
+	cantaPrimero <- 1 ;
 	si jugadorMano = 1 Entonces
 		cantaSegundo <- 2;
 	SiNo
@@ -1529,7 +1530,7 @@ subProceso jugadorGanador <-EJECUTAR_TRUCO(cartasJugador1 Por Referencia, cartas
 			Cantar(33,1);
 		sino 
 			ptosJ2 <- ptosJ2 +PuntosSegunJugada(3,nivelTruco,0,aceptado);
-			Limpiar Pantalla
+			Limpiar Pantalla;
 			Cantar(33,2);
 		FinSi		
 	FinSi		
@@ -1543,7 +1544,7 @@ subProceso jugadorGanador <-EJECUTAR_TRUCO(cartasJugador1 Por Referencia, cartas
 	Escribir "";
 	Escribir "";
 	Escribir "";
-	Esperar 4 Segundos
+	Esperar 4 Segundos;
 	//Limpiar Pantalla 
 FinSubProceso
 
@@ -1558,7 +1559,7 @@ subProceso jugadorGanador <- EJECUTAR_ENVIDO(cartasJugador1 Por Referencia, cart
 	si nroRonda > 1 Entonces
 		erroresVarios("envidoInvalido");
 		nroRonda <- nroRonda -1;
-		Esperar  2 Segundos		
+		Esperar  2 Segundos;
 	SiNo		
 		primero <- Verdadero;
 		aceptado <- Verdadero;
@@ -1869,8 +1870,8 @@ subProceso jugadorGanador <- EJECUTAR_ENVIDO(cartasJugador1 Por Referencia, cart
 //			DibujarEnvido(cartasJugador2);				
 //			esperar 2  Segundos				
 		FinSi
-		esperar 3  Segundos
-		Limpiar Pantalla 
+		esperar 2  Segundos;
+		Limpiar Pantalla ;
 	FinSi
 FinsubProceso
 
@@ -2028,7 +2029,7 @@ SubProceso  testTruco(a)
 	
 	Escribir  "Puntos j1:", puntajeJ1 , " puntos j2:", puntajeJ2;
 	// si nivelEnvid -1 se fue al mazo
-	vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador1, vCartasJugador2 ,vMasoReferencia  , puntajeJ1, puntajeJ2 ,vMesa, nroRonda,1,nivelDeTruco)
+	vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador1, vCartasJugador2 ,vMasoReferencia  , puntajeJ1, puntajeJ2 ,vMesa, nroRonda,1,nivelDeTruco);
 //	Escribir  "After Puntos j1:", puntajeJ1 , " puntos j2:", puntajeJ2;
 	
 	
@@ -2075,7 +2076,7 @@ SubProceso ganador <- darGanadorPartida(vecGanadores)
 	FinPara
 	
 	si cant1 > cant2 Entonces
-		ganador <- 1
+		ganador <- 1;
 	SiNo
 		ganador <-2;
 	FinSi
@@ -2085,7 +2086,7 @@ FinSubProceso
 
 Funcion  JugarPartida(a)
 	Definir  accionJugador como entero;
-	Definir  nvCartasJugador1,vCartasJugador2,  opcionMenu, op,nroRonda , puntajeJ1, puntajeJ2 , puntajeJ1Gral , puntajeJ2Gral como  entero;
+	Definir  vCartasJugador1,vCartasJugador2,  opcionMenu, op,nroRonda , puntajeJ1, puntajeJ2 , puntajeJ1Gral , puntajeJ2Gral como  entero;
 	Definir  nivelDeEnvido, nivelDeTruco, jugadorMano, nroPartida Como Entero;
 	Definir ganadoresxRonda,vMesa,vMaso, vMasoReferencia Como Entero;
 	Definir  seEjecutoEnvido, seEjecutoTruco , finDelJuego, seCantoFaltaEnvido Como Logico;
@@ -2155,10 +2156,10 @@ Funcion  JugarPartida(a)
 						si seEjecutoEnvido = Falso Entonces				
 							si nroRonda > 1 Entonces
 								erroresVarios("envidoInvalido");
-								Esperar  2 Segundos		
+								Esperar  2 Segundos	;	
 							SiNo
 								
-								esperar 2 Segundos
+								esperar 2 Segundos;
 								si jugadorMano = 1 Entonces
 									vganadoresxRonda(nroRonda) <- EJECUTAR_ENVIDO(vCartasJugador1, vCartasJugador2 , puntajeJ1, puntajeJ2, vMesa,nroRonda,jugadorMano, nivelEnvido,seCantoFaltaEnvido);
 								SiNo
@@ -2169,7 +2170,7 @@ Funcion  JugarPartida(a)
 							FinSi
 							
 						SiNo
-							Limpiar Pantalla
+							Limpiar Pantalla;
 							Escribir  " YA SE JUGO EL ENVIDO";
 						FinSi				
 					4:
@@ -2196,7 +2197,7 @@ Funcion  JugarPartida(a)
 								//Limpiar Pantalla;
 								si nroRonda > 1 Entonces
 									erroresVarios("envidoInvalido");
-									Esperar  2 Segundos		
+									Esperar  2 Segundos	;	
 								SiNo
 									Escribir  "entrooo 1";
 									si jugadorMano = 1 Entonces
@@ -2211,14 +2212,14 @@ Funcion  JugarPartida(a)
 								
 								si seEjecutoTruco = Falso Entonces							
 									si jugadorMano = 1 Entonces
-										vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador1, vCartasJugador2 ,vMasoReferencia  , puntajeJ1, puntajeJ2 ,vMesa, nroRonda,nroRonda, nivelTruco)
+										vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador1, vCartasJugador2 ,vMasoReferencia  , puntajeJ1, puntajeJ2 ,vMesa, nroRonda,nroRonda, nivelTruco);
 									SiNo
-										vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador2, vCartasJugador1 ,vMasoReferencia  , puntajeJ2, puntajeJ1 ,vMesa, nroRonda,nroRonda, nivelTruco)
+										vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador2, vCartasJugador1 ,vMasoReferencia  , puntajeJ2, puntajeJ1 ,vMesa, nroRonda,nroRonda, nivelTruco);
 									FinSi					
 									seEjecutoTruco <- Verdadero;
 									nroRonda <- nroRonda +1 ;									
 								SiNo
-									Limpiar Pantalla
+									Limpiar Pantalla;
 									Escribir  "YA SE JUGO EL TRUCO";			
 								FinSi
 								
@@ -2228,7 +2229,7 @@ Funcion  JugarPartida(a)
 							jugadorMano<-1 ;					
 							Escribir  "entrooo 2" , vCartasJugador1(1), ":", vCartasJugador1(2) , ":" , vCartasJugador1(3), ":" , jugadorMano;
 //							si jugadorMano = 1 Entonces
-								vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador1, vCartasJugador2 ,vMasoReferencia  , puntajeJ1, puntajeJ2 ,vMesa, nroRonda,nroRonda, nivelTruco)
+								vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador1, vCartasJugador2 ,vMasoReferencia  , puntajeJ1, puntajeJ2 ,vMesa, nroRonda,nroRonda, nivelTruco);
 //							SiNo
 //								vganadoresxRonda(nroRonda) <- EJECUTAR_TRUCO(vCartasJugador2, vCartasJugador1 ,vMasoReferencia  , puntajeJ2, puntajeJ1 ,vMesa, nroRonda,nroRonda, nivelTruco)
 //							FinSi	
@@ -2236,7 +2237,7 @@ Funcion  JugarPartida(a)
 							nroRonda <- nroRonda +1 ;
 							
 						SiNo
-							Limpiar Pantalla
+							Limpiar Pantalla;
 
 							Escribir  "YA SE JUGO EL TRUCO";	
 						FinSi
@@ -2307,7 +2308,7 @@ Funcion  JugarPartida(a)
 FinFuncion
 Proceso Pruebas
 reglas(1);
-	Esperar 2 Segundos
+	Esperar 2 Segundos;
 	Limpiar Pantalla;
 	//TestEnvido(1);
 	jugarPartida(1);
